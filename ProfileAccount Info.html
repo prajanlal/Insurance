@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Profile / Account Info</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    max-width: 700px;
+    margin: 40px auto;
+    background: #f8fafc;
+    color: #2c3e50;
+  }
+
+  h1, h2 {
+    text-align: center;
+    color: #34495e;
+  }
+
+  section {
+    background: white;
+    padding: 25px 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+
+  .info-group {
+    margin-bottom: 20px;
+  }
+
+  .info-group h3 {
+    border-bottom: 2px solid #2980b9;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+    color: #2980b9;
+  }
+
+  .info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  .info-row:last-child {
+    border-bottom: none;
+  }
+
+  .label {
+    font-weight: 600;
+    color: #555;
+  }
+
+  .value {
+    color: #222;
+  }
+</style>
+</head>
+<body>
+
+  <h1>Profile / Account Info</h1>
+
+  <section id="personalDetails" class="info-group">
+    <h3>Personal Details</h3>
+    <div class="info-row">
+      <div class="label">Full Name</div>
+      <div class="value">John Doe</div>
+    </div>
+    <div class="info-row">
+      <div class="label">Date of Birth</div>
+      <div class="value">1990-06-15</div>
+    </div>
+    <div class="info-row">
+      <div class="label">Gender</div>
+      <div class="value">Male</div>
+    </div>
+  </section>
+
+  <section id="nomineeDetails" class="info-group">
+    <h3>Nominee Details</h3>
+    <div class="info-row">
+      <div class="label">Name</div>
+      <div class="value">Jane Doe</div>
+    </div>
+    <div class="info-row">
+      <div class="label">Relationship</div>
+      <div class="value">Wife</div>
+    </div>
+    <div class="info-row">
+      <div class="label">Date of Birth</div>
+      <div class="value">1988-09-20</div>
+    </div>
+  </section>
+
+  <section id="contactInfo" class="info-group">
+    <h3>Contact Information</h3>
+    <div class="info-row">
+      <div class="label">Email</div>
+      <div class="value">johndoe@example.com</div>
+    </div>
+    <div class="info-row">
+      <div class="label">Phone</div>
+      <div class="value">+1 555-123-4567</div>
+    </div>
+    <div class="info-row">
+      <div class="label">Address</div>
+      <div class="value">123 Main Street, Springfield, USA</div>
+    </div>
+  </section>
+
+</body>
+</html>

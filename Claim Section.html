@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Claims Section</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 40px auto;
+    background: #f7f9fc;
+    color: #2c3e50;
+  }
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .btn {
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    margin: 10px 10px 10px 0;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+  .btn:hover {
+    background-color: #1c5980;
+  }
+  form {
+    margin-top: 20px;
+  }
+  label {
+    display: block;
+    margin: 10px 0 6px;
+  }
+  input[type="file"] {
+    padding: 6px 0;
+  }
+  input[type="submit"] {
+    margin-top: 15px;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  input[type="submit"]:hover {
+    background-color: #1e874b;
+  }
+</style>
+</head>
+<body>
+
+  <h2>Claims Section</h2>
+
+  <button class="btn" onclick="fileNewClaim()">File a New Claim</button>
+  <button class="btn" onclick="trackClaims()">Track Existing Claims</button>
+
+  <form id="uploadForm" onsubmit="uploadClaimDocument(event)">
+    <label for="claimDoc">Upload Claim Document (PDF/JPG/PNG):</label>
+    <input type="file" id="claimDoc" name="claimDoc" accept=".pdf,.jpg,.jpeg,.png" required />
+    <input type="submit" value="Upload Document" />
+  </form>
+
+<script>
+  function fileNewClaim() {
+    alert("Redirecting to File a New Claim form...");
+    // Here you can redirect or open the claim filing page
+  }
+
+  function trackClaims() {
+    alert("Redirecting to Track Claims page...");
+    // Here you can redirect or open the claim tracking page
+  }
+
+  function uploadClaimDocument(event) {
+    event.preventDefault();
+    const fileInput = document.getElementById('claimDoc');
+    if (fileInput.files.length === 0) {
+      alert("Please select a document to upload.");
+      return;
+    }
+    // Simulate upload process
+    alert(`Uploading document: ${fileInput.files[0].name}`);
+    fileInput.value = ""; // Clear input after upload simulation
+  }
+</script>
+
+</body>
+</html>
