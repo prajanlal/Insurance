@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>User Dashboard</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background:#BFD4F2;
+}
+
+/* NAVBAR */
+.navbar{
+    background:#2F5DAA;
+    color:white;
+    padding:20px 40px;
+    font-size:22px;
+    font-weight:bold;
+}
+
+/* MAIN */
+.container{
+    padding:40px;
+}
+
+/* WELCOME */
+.welcome{
+    margin-bottom:30px;
+}
+
+.welcome h2{
+    margin-bottom:10px;
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    gap:20px;
+}
+
+/* CARDS */
+.card{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* STATS */
+.stat{
+    font-size:22px;
+    font-weight:bold;
+    color:#2F5DAA;
+}
+
+/* ACTION BUTTONS */
+.actions{
+    margin-top:30px;
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.actions button{
+    padding:12px 20px;
+    border:none;
+    border-radius:6px;
+    background:#2F5DAA;
+    color:white;
+    cursor:pointer;
+    font-size:16px;
+    transition: 0.3s;
+}
+
+.actions button:hover{
+    background:#1B3F7E;
+}
+
+/* ACTIVITY */
+.activity{
+    margin-top:40px;
+}
+
+.activity ul{
+    margin-top:10px;
+    padding-left:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    User Dashboard
+</div>
+
+<div class="container">
+
+    <!-- WELCOME -->
+    <div class="welcome">
+        <h2>Welcome, Hema 👋</h2>
+        <p>Here’s an overview of your insurance activities</p>
+    </div>
+
+    <!-- STATS -->
+    <div class="grid">
+        <div class="card">
+            <div class="stat">3</div>
+            Active Policies
+        </div>
+
+        <div class="card">
+            <div class="stat">₹50,000</div>
+            Total Coverage
+        </div>
+
+        <div class="card">
+            <div class="stat">2</div>
+            Claims Filed
+        </div>
+
+        <div class="card">
+            <div class="stat">1</div>
+            Pending Claims
+        </div>
+    </div>
+
+    <!-- ACTIONS -->
+    <div class="actions">
+        <button onclick="window.location.href='buypolicy.html'">Buy Policy</button>
+        <button onclick="window.location.href='viewpolicy.html'">View Policies</button>
+        <button onclick="window.location.href='raiseclaim.html'">Raise Claim</button>
+        <button onclick="window.location.href='payment.html'">Make Payment</button>
+    </div>
+
+    <!-- RECENT ACTIVITY -->
+    <div class="activity">
+        <h3>Recent Activity</h3>
+        <ul>
+            <li>✔ Policy #1234 purchased</li>
+            <li>✔ Claim #567 approved</li>
+            <li>✔ Payment of ₹2000 completed</li>
+        </ul>
+    </div>
+
+</div>
+
+</body>
+</html>

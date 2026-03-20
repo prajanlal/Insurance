@@ -1,141 +1,265 @@
-
-Insurance application
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Policy Overview</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f6f9;
-      margin: 0;
-      padding: 20px;
-    }
+    <meta charset="UTF-8">
+    <title>InsurancePro</title>
 
-    h1 {
-      text-align: center;
-      color: #333;
-    }
+    <style>
+        /* RESET */
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
 
-    .container {
-      max-width: 900px;
-      margin: auto;
-    }
+        body{
+            font-family: Arial, sans-serif;
+            background:#BFD4F2; /* slightly darker light blue */
+            overflow-x:hidden;
+        }
 
-    .card {
-      background: #fff;
-      border-radius: 10px;
-      padding: 20px;
-      margin: 15px 0;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+        /* NAVBAR */
+        .navbar{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:15px 40px;
+            background:#2F5DAA;
+            color:white;
+        }
 
-    .details {
-      flex: 1;
-    }
+        .navbar h2{
+            font-weight:bold;
+        }
 
-    .details h3 {
-      margin: 0;
-      color: #2c3e50;
-    }
+        .navbar button{
+            padding:10px 20px;
+            border:none;
+            border-radius:6px;
+            background:white;
+            cursor:pointer;
+        }
 
-    .details p {
-      margin: 5px 0;
-      color: #555;
-    }
+        /* HERO */
+        .hero{
+            width:100%;
+            min-height:80vh;
+            padding:60px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            background: linear-gradient(135deg,#AFCBFF,#D6E6FF);
+        }
 
-    .status {
-      padding: 8px 15px;
-      border-radius: 20px;
-      font-weight: bold;
-      color: white;
-    }
+        .hero-text{
+            max-width:550px;
+        }
 
-    .active {
-      background-color: #27ae60;
-    }
+        .hero h1{
+            font-size:42px;
+            margin-bottom:15px;
+        }
 
-    .expired {
-      background-color: #e74c3c;
-    }
+        .hero span{
+            color:#2F5DAA;
+        }
 
-    .expiring {
-      background-color: #f39c12;
-    }
-  </style>
+        .hero p{
+            margin-bottom:20px;
+            color:#333;
+        }
+
+        .hero button{
+            padding:12px 25px;
+            background:#2F5DAA;
+            color:white;
+            border:none;
+            border-radius:6px;
+            cursor:pointer;
+        }
+
+        .hero img{
+            width:300px;
+            max-width:100%;
+        }
+
+        /* PRODUCTS */
+        .section{
+            padding:60px;
+            text-align:center;
+        }
+
+        .grid{
+            display:flex;
+            justify-content:center;
+            gap:20px;
+            margin-top:20px;
+            flex-wrap:wrap;
+        }
+
+        .card{
+            padding:20px;
+            background:#f5f7fb;
+            border-radius:10px;
+            min-width:180px;
+        }
+
+        /* WHY */
+        .why{
+            display:flex;
+            justify-content:center;
+            gap:20px;
+            margin-top:20px;
+            flex-wrap:wrap;
+        }
+
+        /* STATS */
+        .stats{
+            background:#2F5DAA;
+            color:white;
+            padding:25px;
+            display:flex;
+            justify-content:space-around;
+            margin:40px 0;
+            border-radius:10px;
+        }
+
+        /* FAQ */
+        .faq-item{
+            background:#f5f7fb;
+            padding:15px;
+            margin:10px auto;
+            width:70%;
+            cursor:pointer;
+            border-radius:6px;
+        }
+
+        .answer{
+            display:none;
+            padding-top:10px;
+            color:#444;
+        }
+
+        /* FOOTER */
+        footer{
+            background:#2F5DAA;
+            color:white;
+            text-align:center;
+            padding:20px;
+            margin-top:40px;
+        }
+    </style>
 </head>
+
 <body>
 
-  <h1>Policy Overview</h1>
+<!-- NAVBAR -->
+<div class="navbar">
+    <h2>InsurancePro</h2>
+    <button onclick="goLogin()">Login</button>
+</div>
 
-  <div class="container" id="policyContainer"></div>
+<!-- HERO -->
+<div class="hero">
+    <div class="hero-text">
+        <h1>Protect Your Future with <span>InsurancePro</span></h1>
+        <p>Smart, secure and modern insurance solutions. Manage policies, claims and payments easily.</p>
+        
+        
+    </div>
 
-  <script>
-    const policies = [
-      {
-        number: "HLT123456",
-        type: "Health Insurance",
-        expiry: "2026-05-10"
-      },
-      {
-        number: "LIF789012",
-        type: "Life Insurance",
-        expiry: "2025-04-01"
-      },
-      {
-        number: "MTR345678",
-        type: "Motor Insurance",
-        expiry: "2024-12-15"
-      }
-    ];
+    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+</div>
 
-    function getStatus(expiryDate) {
-      const today = new Date();
-      const expiry = new Date(expiryDate);
-      const diffDays = (expiry - today) / (1000 * 60 * 60 * 24);
+<!-- PRODUCTS -->
+<div class="section">
+    <h2>Our Products</h2>
 
-      if (diffDays < 0) return "Expired";
-      if (diffDays <= 30) return "Expiring Soon";
-      return "Active";
+    <div class="grid">
+        <div class="card">🚗 Car Insurance</div>
+        <div class="card">🏥 Health Insurance</div>
+        <div class="card">✈ Travel Insurance</div>
+        <div class="card">🏠 Home Insurance</div>
+    </div>
+</div>
+
+<!-- WHY -->
+<div class="section">
+    <h2>Why Choose Us</h2>
+
+    <div class="why">
+        <div class="card">✔ Trusted by thousands</div>
+        <div class="card">✔ Fast claim processing</div>
+        <div class="card">✔ 24/7 support</div>
+    </div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+    <div>10K+ Users</div>
+    <div>5K+ Policies</div>
+    <div>2K+ Claims</div>
+</div>
+
+<!-- MILESTONES -->
+<div class="section">
+    <h2>Our Milestones</h2>
+
+    <div class="grid">
+        <div class="card">6M+ Policies</div>
+        <div class="card">2M+ Claims</div>
+        <div class="card">90% Success</div>
+    </div>
+</div>
+
+<!-- TESTIMONIAL -->
+<div class="section">
+    <h2>What Our Customers Say</h2>
+    <p>"Smooth claim process and great support!"</p>
+</div>
+
+<!-- FAQ -->
+<div class="section">
+    <h2>FAQ</h2>
+
+    <div class="faq-item" onclick="toggleFAQ(this)">
+        What is claim process?
+        <div class="answer">Submit documents → verification → approval → payout.</div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFAQ(this)">
+        How to renew policy?
+        <div class="answer">Login → select policy → click renew.</div>
+    </div>
+</div>
+
+<!-- PARTNERS -->
+<div class="section">
+    <h2>Our Partners</h2>
+
+    <div class="grid">
+        <div class="card">PolicyBoss</div>
+        <div class="card">PolicyBachat</div>
+        <div class="card">Symbo</div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    © 2026 InsurancePro
+</footer>
+
+<!-- SCRIPT -->
+<script>
+    function goLogin(){
+        window.location.href="login.html";
     }
 
-    function getStatusClass(status) {
-      if (status === "Active") return "active";
-      if (status === "Expired") return "expired";
-      return "expiring";
+    function toggleFAQ(element){
+        let ans = element.querySelector(".answer");
+        ans.style.display = ans.style.display === "block" ? "none" : "block";
     }
-
-    function renderPolicies() {
-      const container = document.getElementById("policyContainer");
-
-      policies.forEach(policy => {
-        const status = getStatus(policy.expiry);
-
-        const card = document.createElement("div");
-        card.className = "card";
-
-        card.innerHTML = `
-          <div class="details">
-            <h3>${policy.type}</h3>
-            <p><strong>Policy No:</strong> ${policy.number}</p>
-            <p><strong>Expiry Date:</strong> ${policy.expiry}</p>
-          </div>
-          <div class="status ${getStatusClass(status)}">
-            ${status}
-          </div>
-        `;
-
-        container.appendChild(card);
-      });
-    }
-
-    renderPolicies();
-  </script>
+</script>
 
 </body>
 </html>
-

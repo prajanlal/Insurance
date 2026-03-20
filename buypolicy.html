@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buy Policy</title>
+<style>
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background:#BFD4F2;
+}
+
+.navbar {
+    background:#2F5DAA;
+    color:white;
+    padding:20px 40px;
+    font-size:22px;
+    font-weight:bold;
+}
+
+/* FORM CONTAINER */
+.container {
+    max-width:600px;
+    margin:50px auto;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align:center;
+    color:#2F5DAA;
+    margin-bottom:25px;
+}
+
+label {
+    display:block;
+    margin:15px 0 5px;
+    font-weight:bold;
+}
+
+input, select {
+    width:100%;
+    padding:10px;
+    border-radius:5px;
+    border:1px solid #ccc;
+}
+
+button {
+    width:100%;
+    padding:12px;
+    margin-top:20px;
+    background:#2F5DAA;
+    color:white;
+    font-size:16px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+button:hover {
+    background:#1B3F7E;
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">Buy Policy</div>
+
+<!-- FORM -->
+<div class="container">
+    <h1>Purchase a Policy</h1>
+    <form id="buyPolicyForm">
+        <label for="policyType">Select Policy:</label>
+        <select id="policyType" required>
+            <option value="">-- Select Policy --</option>
+            <option value="Health">Health Insurance</option>
+            <option value="Life">Life Insurance</option>
+            <option value="Car">Car Insurance</option>
+            <option value="Home">Home Insurance</option>
+        </select>
+
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" placeholder="Enter your full name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" placeholder="Enter your phone number" required pattern="[0-9]{10}" maxlength="10">
+
+        <label for="amount">Premium Amount:</label>
+        <input type="number" id="amount" placeholder="Enter amount" required min="1">
+
+        <button type="submit">Buy Policy</button>
+    </form>
+</div>
+
+<script>
+document.getElementById('buyPolicyForm').addEventListener('submit', function(e){
+    e.preventDefault();
+
+    const policy = document.getElementById('policyType').value;
+    const name = document.getElementById('fullName').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const amount = document.getElementById('amount').value;
+
+    if(!policy || !name || !email || !phone || !amount){
+        alert("Please fill in all fields.");
+        return;
+    }
+
+    alert(`Policy "${policy}" purchased successfully for ${name}! Amount: ₹${amount}`);
+    // Here you can redirect to payment page or save data to backend
+    this.reset();
+});
+</script>
+
+</body>
+</html>

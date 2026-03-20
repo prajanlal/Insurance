@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raise Claim</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 25px;
+        }
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        .btn-claim {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            background-color: #f44336;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .btn-claim:hover {
+            background-color: #d73833;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Raise a Claim</h1>
+    <form id="claimForm">
+        <label for="policy">Select Policy:</label>
+        <select id="policy" required>
+            <option value="">-- Select Policy --</option>
+            <option value="P001">Health Insurance</option>
+            <option value="P002">Life Insurance</option>
+            <option value="P003">Car Insurance</option>
+            <!-- Add more policies as needed -->
+        </select>
+
+        <label for="claimType">Claim Type:</label>
+        <select id="claimType" required>
+            <option value="">-- Select Claim Type --</option>
+            <option value="Accident">Accident</option>
+            <option value="Medical">Medical</option>
+            <option value="Theft">Theft</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <label for="description">Description:</label>
+        <textarea id="description" placeholder="Enter claim details..." required></textarea>
+
+        <label for="documents">Upload Supporting Documents:</label>
+        <input type="file" id="documents" accept=".pdf,.jpg,.png" required>
+
+        <button type="submit" class="btn-claim">Submit Claim</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById('claimForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const policy = document.getElementById('policy').value;
+        const claimType = document.getElementById('claimType').value;
+        const description = document.getElementById('description').value;
+
+        if (!policy || !claimType || !description) {
+            alert("Please fill in all required fields.");
+            return;
+        }
+
+        alert(`Claim for policy ${policy} of type ${claimType} submitted successfully!`);
+        // Here you can send data to a backend or database
+        this.reset();
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,141 @@
+
+Insurance application
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Policy Overview</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 15px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .details {
+      flex: 1;
+    }
+
+    .details h3 {
+      margin: 0;
+      color: #2c3e50;
+    }
+
+    .details p {
+      margin: 5px 0;
+      color: #555;
+    }
+
+    .status {
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .active {
+      background-color: #27ae60;
+    }
+
+    .expired {
+      background-color: #e74c3c;
+    }
+
+    .expiring {
+      background-color: #f39c12;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Policy Overview</h1>
+
+  <div class="container" id="policyContainer"></div>
+
+  <script>
+    const policies = [
+      {
+        number: "HLT123456",
+        type: "Health Insurance",
+        expiry: "2026-05-10"
+      },
+      {
+        number: "LIF789012",
+        type: "Life Insurance",
+        expiry: "2025-04-01"
+      },
+      {
+        number: "MTR345678",
+        type: "Motor Insurance",
+        expiry: "2024-12-15"
+      }
+    ];
+
+    function getStatus(expiryDate) {
+      const today = new Date();
+      const expiry = new Date(expiryDate);
+      const diffDays = (expiry - today) / (1000 * 60 * 60 * 24);
+
+      if (diffDays < 0) return "Expired";
+      if (diffDays <= 30) return "Expiring Soon";
+      return "Active";
+    }
+
+    function getStatusClass(status) {
+      if (status === "Active") return "active";
+      if (status === "Expired") return "expired";
+      return "expiring";
+    }
+
+    function renderPolicies() {
+      const container = document.getElementById("policyContainer");
+
+      policies.forEach(policy => {
+        const status = getStatus(policy.expiry);
+
+        const card = document.createElement("div");
+        card.className = "card";
+
+        card.innerHTML = `
+          <div class="details">
+            <h3>${policy.type}</h3>
+            <p><strong>Policy No:</strong> ${policy.number}</p>
+            <p><strong>Expiry Date:</strong> ${policy.expiry}</p>
+          </div>
+          <div class="status ${getStatusClass(status)}">
+            ${status}
+          </div>
+        `;
+
+        container.appendChild(card);
+      });
+    }
+
+    renderPolicies();
+  </script>
+
+</body>
+</html>
+
