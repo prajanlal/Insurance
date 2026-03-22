@@ -19,7 +19,7 @@ Backend:
 - Python (planned for handling logic and APIs)
 
 Database:
-- MongoDB (for storing user and policy data)
+- MySQL (for storing user and policy data)
 
 
 How the System Works?
