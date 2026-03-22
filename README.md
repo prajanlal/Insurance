@@ -41,7 +41,7 @@ Hema
   - Prepared ppt and presented the project 
 
 Prajanlal
-  - Builded an AI chatbot using Gemini Flash 3 Model with the
+  - Builded an AI powered Insurance chatbot using Gemini Flash 3 Model with the
     helps of API Integration and fineTunned the model to perform 
     Insurance needed task such as:
   - Insurance Policy
