@@ -7,12 +7,12 @@ from google.genai import types
 
 def generate():
     client = genai.Client(
-        api_key="AIzaSyA1c-AW1ptrgM1gPTnCvjV9fX7n2OgdZ_s"   # 🔑 replace safely
+        api_key="AIzaSyA1c-AW1ptrgM1gPTnCvjV9fX7n2OgdZ_s"   
     )
 
     config = types.GenerateContentConfig(
         temperature=0.5,
-        max_output_tokens=200,   # 🔥 limit output
+        max_output_tokens=200,   
         safety_settings=[
             types.SafetySetting(
                 category="HARM_CATEGORY_HARASSMENT",
@@ -49,13 +49,13 @@ You are a professional AI insurance assistant.
         config=config
     )
 
-    print("✅ Insurance Assistant Ready! Type 'exit' to stop.\n")
+    print(" Insurance Assistant Ready! Type 'exit' to stop.\n")
 
     while True:
         user_input = input("You: ")
 
         if user_input.lower() == "exit":
-            print("👋 Chat ended.")
+            print("Chat ended.")
             break
 
         response = chat.send_message(user_input)
