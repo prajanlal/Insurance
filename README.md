@@ -47,9 +47,9 @@ Prajanlal
   - Insurance Policy
   - Car Insurance
   - Healthcare Insurance and more
-   - Safety Features
-   - Greeting Logic
-- 
+    
+   - Added Safety Features & Greetings Logic
+  
 Kanagadurga
   - Designed and maintained the backend database using MySQL.
   - Executed queries and managed data operations to support application features.  
