@@ -47,8 +47,7 @@ Prajanlal
   - Insurance Policy
   - Car Insurance
   - Healthcare Insurance and more
-   Worked on backend logic using Python
-  - Designed a chatbot
+   
 
 Kanagadurga
   - Designed and maintained the backend database using MySQL.
