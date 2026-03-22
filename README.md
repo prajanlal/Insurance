@@ -48,7 +48,7 @@ Prajanlal
   - Car Insurance
   - Healthcare Insurance and
     
-  -FEATURES
+ - FEATURES
    - Safety Features
     -Blocks harmful or unsafe content (harassment, hate speech, explicit, dangerous queries).
     -Ensures professional and secure responses for all insurance-related queries.
