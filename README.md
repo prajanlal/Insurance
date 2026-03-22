@@ -41,7 +41,13 @@ Hema
   - Prepared ppt and presented the project 
 
 Prajanlal
-  - Worked on backend logic using Python
+  - Builded an AI chatbot using Gemini Flash 3 Model with the
+    helps of API Integration and fineTunned the model to perform 
+    Insurance needed task such as:
+  - Insurance Policy
+  - Car Insurance
+  - Healthcare Insurance and more
+   Worked on backend logic using Python
   - Designed a chatbot
 
 Kanagadurga
