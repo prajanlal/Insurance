@@ -43,7 +43,7 @@ Hema
 Prajanlal
   - Builded an AI powered Insurance chatbot using Gemini Flash 3 Model with the
     helps of API Integration and fineTunned the model to perform 
-    Insurance needed task such as:
+    the Insurance task such as:
   - Insurance Policy
   - Car Insurance
   - Healthcare Insurance and more
