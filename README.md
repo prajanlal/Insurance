@@ -47,21 +47,9 @@ Prajanlal
   - Insurance Policy
   - Car Insurance
   - Healthcare Insurance and more
-
-   
    - Safety Features
-     
-   - Blocks harmful or unsafe content (harassment, hate speech, explicit, dangerous queries).
-   - Ensures professional and secure responses for all insurance-related queries.
-   - Maintains user trust by filtering inappropriate inputs before generating answers.
-
-
    - Greeting Logic
-   
-   - Detects greetings such as Hi, Hello, Good Morning, Good Evening, Good Night, Good Afternoon.
-   - Responds politely with a friendly acknowledgment (e.g., “Hi, good morning! How can I help you today?”).
-   - Creates a natural, conversational flow before moving into insurance tasks.
-    
+- 
 Kanagadurga
   - Designed and maintained the backend database using MySQL.
   - Executed queries and managed data operations to support application features.  
