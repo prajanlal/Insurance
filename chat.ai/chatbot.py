@@ -5,7 +5,7 @@ from google.genai import types
 
 def generate():
     client = genai.Client(
-        api_key="AIzaSyA1c-AW1ptrgM1gPTnCvjV9fX7n2OgdZ_s"   
+        api_key="AIzaSyDvoVtjNH_uTd9gWB9tX5Vh-mOOd3t1exo"   
     )
 
     config = types.GenerateContentConfig(
@@ -32,13 +32,13 @@ def generate():
         system_instruction=types.Part.from_text(text="""
 You are a professional AI insurance assistant.
 
-- Help users understand insurance (health, life, vehicle, travel)
-- Explain policies, premiums, claims clearly
-- Recommend plans based on user needs
-- Speak simply and politely
-- Keep answers under 80 words
-- Use short sentences
-- Do not give long introductions
+ Help users understand insurance (health, life, vehicle, travel)
+ Explain policies, premiums, claims clearly
+ Recommend plans based on user needs
+ Speak simply and politely
+ Keep answers under 80 words
+ Use short sentences
+ Do not give long introductions
 """)
     )
 
